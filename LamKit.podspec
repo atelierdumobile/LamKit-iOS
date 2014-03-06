@@ -18,5 +18,6 @@ Pod::Spec.new do |s|
   s.frameworks = 'CoreGraphics', 'QuartzCore'
  
   s.dependency 'NSLogger'
+  s.dependency 'LOG_EXPR'
   
 end

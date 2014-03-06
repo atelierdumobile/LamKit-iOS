@@ -95,8 +95,3 @@ static inline void LamLogMessageF(const char *filename, int lineNumber, const ch
     va_end(args);
 }
 
-
-
-// Adds LOG_EXPR.
-//#import "VTPG_LogExpr.h"
-
