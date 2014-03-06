@@ -3,10 +3,15 @@
 //  LamKit
 //
 //  Created by Mathieu Godart on 05/10/11.
-//  Copyright 2011 L'atelier du mobile. All rights reserved.
+//  Copyright (c) 2011-2013 L'Atelier du mobile. All rights reserved.
 //
 
 #import <objc/runtime.h>
+
+
+
+/// iOS version check.
+#define IsRunningOniOS6() (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_6_1)
 
 
 
@@ -26,20 +31,39 @@
 
 
 
+/// LOG_EXPR
+#define L(x) LOG_EXPR(x)
+
+
+
 /// Returns NO is the object is nil or empty.
 /// http://www.wilshipley.com/blog/2005/10/pimp-my-code-interlude-free-code.html
-static inline BOOL IsEmpty(id thing) {
-	return thing == nil ||
+static inline BOOL IsEmpty(id thing)
+{
+	return thing == nil || thing == NSNull.null ||
     ([thing respondsToSelector:@selector(length)] && [(NSData *)thing length] == 0) ||
     ([thing respondsToSelector:@selector(count)]  && [(NSArray *)thing count] == 0);
+}
+
+static inline BOOL IsNotEmpty(id thing)
+{
+    return IsEmpty(thing) == NO;
+}
+
+
+// Returns YES is the obects are equal or if both are nil.
+static inline BOOL AreEqualOrNil(id obj1, id obj2)
+{
+    return ([obj1 isEqual:obj2] ||
+            (obj1 == nil && obj2 == nil));
 }
 
 
 
 /// Checks if it is possible to get an object at this index, then returns it.
 /// Else, returns nil (out of bounds, or does not answer to count or objectAtIndex:).
-static inline id safeObjectAtIndex(id aCollection, NSUInteger index) {
-    
+static inline id safeObjectAtIndex(id aCollection, NSUInteger index)
+{
     if (![aCollection respondsToSelector:@selector(objectAtIndex:)]) return nil;
     if (![aCollection respondsToSelector:@selector(count)]) return nil;
     if (index >= [aCollection count]) return nil;
@@ -66,6 +90,22 @@ static inline NSString *zeroStringIfNil(id object)
     if ([object isKindOfClass:[NSNumber class]]) return StrFmt(@"%@", object);
     return @"0";
 }
+
+
+
+/// App delegate quick and dirty accessor.
+#define appD ((AppDelegate *)[[UIApplication sharedApplication] delegate])
+
+
+
+/// Assert if the method has not been subclassed.
+#define ASSERT_SUBCLASS() { \
+NSAssert(NO, @"Please subclass this method %s (class %s).", \
+__PRETTY_FUNCTION__, __FILE__); }
+
+#define ASSERT_SUBCLASS_RETURN_NIL() do { \
+NSAssert(NO, @"Please subclass this method %s (class %s).", \
+__PRETTY_FUNCTION__, __FILE__); return nil; } while(0)
 
 
 

@@ -3,7 +3,7 @@
 //  LamKit
 //
 //  Created by Mathieu Godart on 14/11/11.
-//  Copyright (c) 2011 L'atelier du mobile. All rights reserved.
+//  Copyright (c) 2011-2013 L'Atelier du mobile. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

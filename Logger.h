@@ -3,7 +3,7 @@
 //  LamKit
 //
 //  Created by Mathieu Godart.
-//  Copyright 2010 L'atelier du mobile. All rights reserved.
+//  Copyright (c) 2011-2013 L'Atelier du mobile. All rights reserved.
 //
 
 #import "LoggerClient.h"
