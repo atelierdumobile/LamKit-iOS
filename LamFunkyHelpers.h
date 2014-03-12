@@ -10,11 +10,6 @@
 
 
 
-/// iOS version check.
-#define IsRunningOniOS6() (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_6_1)
-
-
-
 /// Stringification, see this:
 /// http://gcc.gnu.org/onlinedocs/cpp/Stringification.html
 #define xstr(s) str(s)
