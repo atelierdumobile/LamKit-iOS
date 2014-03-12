@@ -10,5 +10,5 @@
 #import "UIView+LamCoordinate.h"
 
 // Log frameworks (pods dependencies)
-#import "Logger.h"
+#import "NSLogger.h"
 #import "VTPG_LogExpr.h"

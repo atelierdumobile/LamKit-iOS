@@ -26,8 +26,12 @@
 
 
 
-/// LOG_EXPR
-#define L(x) LOG_EXPR(x)
+/// LOG_EXPR helper.
+#ifdef DEBUG
+#    define L(x) LOG_EXPR(x)
+#else
+#    define L(x) while(0) {}
+#endif
 
 
 
