@@ -20,4 +20,9 @@ Pod::Spec.new do |s|
   s.dependency 'NSLogger'
   s.dependency 'LOG_EXPR'
   
+  s.xcconfig = {
+    'OTHER_LDFLAGS' => '-all_load', 
+    'GCC_PREPROCESSOR_DEFINITIONS' => '${inherited} LAM_BUILD_USERNAME="${USER}"'
+  }
+  
 end
