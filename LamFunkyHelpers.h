@@ -93,7 +93,7 @@ static inline NSString *zeroStringIfNil(id object)
 
 
 /// App delegate quick and dirty accessor.
-#define appD ((AppDelegate *)[[UIApplication sharedApplication] delegate])
+#define g_appD ((AppDelegate *)[[UIApplication sharedApplication] delegate])
 
 
 
@@ -105,6 +105,20 @@ __PRETTY_FUNCTION__, __FILE__); }
 #define ASSERT_SUBCLASS_RETURN_NIL() do { \
 NSAssert(NO, @"Please subclass this method %s (class %s).", \
 __PRETTY_FUNCTION__, __FILE__); return nil; } while(0)
+
+
+
+/// Calls the block of code (passed as x) only once.
+/// This can be used at several places in your code, because this is defined as a macro.
+#define DO_THIS_ONLY_ONCE(x) \
+do {\
+    static BOOL alreadyExecutedOnce;\
+    if (alreadyExecutedOnce == NO)\
+    {\
+        alreadyExecutedOnce = YES;\
+        x();\
+    }\
+} while(0)
 
 
 
