@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "UIView+LamCoordinate.h"
 
 /// Helper to determine the size of the displayed text.
 @interface UILabel (LamContentSize)
