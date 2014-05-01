@@ -12,6 +12,7 @@ Pod::Spec.new do |s|
   s.homepage     = "http://www.atelierdumobile.com"
   s.author       = { "Nicolas Lauquin" => "nicolas@atelierdumobile.com", "Mathieu Godart" => "mathieu@atelierdumobile.com" }
   s.platform     = :ios
+  s.ios.deployment_target = "6.0"
   s.source       = { :git => 'https://github.com/atelierdumobile/LamKit-iOS.git' }#, :tag => 0.0.1
   s.source_files  = '*.{h,m}'
   s.requires_arc = true
