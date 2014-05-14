@@ -9,7 +9,7 @@
 
 /// iOS version check.
 #define isRunningOniOS6() (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_6_1)
-
+#define isSystemVersionIOS7()						SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")
 
 
 /// Returns `YES` if the device on which this code is executed is an iPad.
@@ -56,7 +56,12 @@
 #define setUserDefaultsObjectForKey(O, K) [[NSUserDefaults standardUserDefaults] setObject:O forKey:K]
 #define syncUserDefaults()                [[NSUserDefaults standardUserDefaults] synchronize]
 
-
+// Misc constants.
+#define kStatusBarHeight 20
+///@deprecated
+///keyboard Size (for not waiting Notification of Keyboard to get the size)
+#define kKeyboardHeightPortrait  264.0f
+#define kKeyboardHeightLandscape 352.0f
 
 #define SYSTEM_VERSION_EQUAL_TO(v)                  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedSame)
 #define SYSTEM_VERSION_GREATER_THAN(v)              ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedDescending)
