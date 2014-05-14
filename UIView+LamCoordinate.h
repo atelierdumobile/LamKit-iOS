@@ -35,4 +35,10 @@
 /// Y center.
 @property (nonatomic, assign) CGFloat centerY;
 
+/// Frame size
+@property (nonatomic, assign) CGSize size;
+
+/// Frame origin
+@property (nonatomic, assign) CGPoint origin;
+
 @end

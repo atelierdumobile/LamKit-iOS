@@ -42,6 +42,14 @@
     return self.center.y;
 }
 
+- (CGSize)size {
+	return self.frame.size;
+}
+
+- (CGPoint)origin {
+	return self.frame.origin;
+}
+
 - (void) setHeight:(CGFloat) newHeight {
     CGRect bounds = self.bounds;
     bounds.size.height = newHeight;
@@ -84,6 +92,18 @@
     CGPoint center = self.center;
     center.y = newCenterY;
     self.center = center;
+}
+
+- (void)setSize:(CGSize)size {
+	CGRect frame = self.frame;
+	frame.size = size;
+	self.frame = frame;
+}
+
+- (void)setOrigin:(CGPoint)origin {
+	CGRect frame = self.frame;
+	frame.origin = origin;
+	self.frame = frame;
 }
 
 @end
