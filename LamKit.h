@@ -7,7 +7,10 @@
 
 // Lam classes
 #import "LamFunkyHelpers.h"
+#import "LamDeviceHelpers.h"
+
 #import "UIView+LamCoordinate.h"
+#import "UIView+LamAppearence.h"
 
 // Log frameworks (pods dependencies)
 #import "NSLogger.h"
