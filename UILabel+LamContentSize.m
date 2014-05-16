@@ -58,9 +58,17 @@
     // Do not give a height limit, as we want to know the height limit.
     CGSize constraintSize = CGSizeMake(self.frame.size.width, INT32_MAX);
     
+    // iOS 7 deprecation.
+#if __IPHONE_OS_VERSION_MIN_REQUIRED <= __IPHONE_7_0
+    CGRect rect = [aText boundingRectWithSize:constraintSize
+                                      options:NSStringDrawingUsesLineFragmentOrigin
+                                   attributes:nil context:nil];
+    CGSize size = rect.size;
+#else
     CGSize size = [aText sizeWithFont:self.font constrainedToSize:constraintSize];
-    
-    return size.height;
+#endif
+
+    return ceil(size.height);
 }
 
 
