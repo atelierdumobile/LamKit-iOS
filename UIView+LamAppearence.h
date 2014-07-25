@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <UIKit/UIkit.h>
+#import <UIKit/UIKit.h>
 
 
 /// Modification of the view's appearance.
