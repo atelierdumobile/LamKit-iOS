@@ -11,6 +11,7 @@
 
 #import "UIView+LamCoordinate.h"
 #import "UIView+LamAppearence.h"
+#import "UIAlertView+LamUnique.h"
 
 // Log frameworks (pods dependencies)
 #import "NSLogger.h"
